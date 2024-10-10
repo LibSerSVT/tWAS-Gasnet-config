@@ -1,0 +1,27 @@
+<server description="defaultServer">
+
+
+    <httpEndpoint id="defaultHttpEndpoint" host="*" httpPort="9080" httpsPort="9443" />
+
+    <quickStartSecurity userName="admin" userPassword="admin" />
+
+    <authData id="DBAuth" password="${env.DBPass}" user="${env.DBUser}"/>
+
+    <include location="${shared.resource.dir}/ease/db2/jdbc4.xml"/>
+
+    <dataSource jndiName="jdbc/<jndiName>"  jdbcDriverRef="ease.db2jcc4">
+      <properties.db2.jcc serverName="<db2 hostname>"
+                          portNumber="<db2 port>"
+                          databaseName="<database name>"
+                          sslConnection="true"
+                          user="<db2 username>"
+                          password="{mydb.password}"/>
+    </dataSource>
+
+    <webApplication name="GasNet_ATM_Module" location="${server.config.dir}/apps/GasNet_ATM_Module.war" contextRoot="/GasNet_ATM_Module" />
+
+    <logging maxFileSize="100" traceSpecification="svt*=FINE"/>
+    
+    <mpMetrics authentication="false"/>
+
+</server>
