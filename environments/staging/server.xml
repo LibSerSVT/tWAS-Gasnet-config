@@ -16,7 +16,7 @@
                           password="12TIoxDIchQ1O9Qu"/>
     </dataSource>
 
-    <webApplication name="GasNet_ATM_Module" location="${server.config.dir}/apps/GasNet_ATM_Module.war" contextRoot="/GasNet_ATM_Module" />
+    <webApplication name="GasNet_ATM_Module" location="${server.config.dir}/apps/GasStationModule.war" contextRoot="/GasNet_ATM_Module" />
 
     <logging maxFileSize="100" traceSpecification="svt*=FINE"/>
     
